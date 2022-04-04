@@ -6,8 +6,10 @@
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Поиск"
+          placeholder="Поиск..."
           aria-label="Search"
+          v-model="search"
+          @input="changeSearch(search)"
         />
         <button class="btn btn-outline-light" type="submit">Все</button>
       </form>
@@ -18,8 +20,11 @@
 <script>
 export default {
   name: "AppHeader",
+  props: ["changeSearch"],
   data() {
-    return {};
+    return {
+      search: "",
+    };
   },
 };
 </script>
